@@ -149,7 +149,7 @@ const CandidatesApp = () => {
 
   if (selectedCandidate) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div className="min-h-screen min-w-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         {/* Header */}
         <div className="border-b border-gray-700 bg-gray-800/50 backdrop-blur-sm">
           <div className="max-w-6xl px-6 py-4 mx-auto">
@@ -280,7 +280,7 @@ const CandidatesApp = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen min-w-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       {/* Header */}
       <div className="border-b border-gray-700 bg-gray-800/50 backdrop-blur-sm">
         <div className="max-w-6xl px-6 py-4 mx-auto">
