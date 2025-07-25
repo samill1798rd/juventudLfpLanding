@@ -138,10 +138,10 @@ const CandidatesApp = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-green-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-white text-lg">Cargando candidatos...</p>
+          <div className="w-16 h-16 mx-auto mb-4 border-4 border-green-500 rounded-full border-t-transparent animate-spin"></div>
+          <p className="text-lg text-white">Cargando candidatos...</p>
         </div>
       </div>
     );
@@ -151,12 +151,12 @@ const CandidatesApp = () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         {/* Header */}
-        <div className="bg-gray-800/50 backdrop-blur-sm border-b border-gray-700">
-          <div className="max-w-6xl mx-auto px-6 py-4">
+        <div className="border-b border-gray-700 bg-gray-800/50 backdrop-blur-sm">
+          <div className="max-w-6xl px-6 py-4 mx-auto">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                  <div className="flex items-center justify-center w-8 h-8 bg-green-500 rounded-lg">
                     <div className="w-4 h-4 bg-white rounded-sm"></div>
                   </div>
                   <span className="text-xl font-bold text-white">Juventud Participa FP</span>
@@ -164,7 +164,7 @@ const CandidatesApp = () => {
               </div>
               <button
                 onClick={handleBackToList}
-                className="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors"
+                className="flex items-center px-4 py-2 space-x-2 text-white transition-colors bg-green-500 rounded-lg hover:bg-green-600"
               >
                 <ArrowLeft size={20} />
                 <span>Volver a candidatos</span>
@@ -174,28 +174,28 @@ const CandidatesApp = () => {
         </div>
 
         {/* Profile Content */}
-        <div className="max-w-4xl mx-auto px-6 py-8">
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <div className="max-w-4xl px-6 py-8 mx-auto">
+          <div className="overflow-hidden bg-white shadow-2xl rounded-3xl">
             {/* Header Section */}
-            <div className="bg-gradient-to-r from-green-500 to-green-600 px-8 py-12 text-white">
-              <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+            <div className="px-8 py-12 text-white bg-gradient-to-r from-green-500 to-green-600">
+              <div className="flex flex-col items-center space-y-6 md:flex-row md:space-y-0 md:space-x-8">
                 <div className="relative">
                   <img
                     src={selectedCandidate.foto}
                     alt={selectedCandidate.nombreBoleta}
-                    className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg"
+                    className="object-cover w-32 h-32 border-4 border-white rounded-full shadow-lg"
                   />
-                  <div className="absolute -bottom-2 -right-2 bg-white text-green-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg shadow-lg">
+                  <div className="absolute flex items-center justify-center w-12 h-12 text-lg font-bold text-green-600 bg-white rounded-full shadow-lg -bottom-2 -right-2">
                     {selectedCandidate.numeroCasilla}
                   </div>
                 </div>
                 <div className="text-center md:text-left">
-                  <h1 className="text-3xl font-bold mb-2">{selectedCandidate.nombreBoleta}</h1>
-                  <div className="flex items-center justify-center md:justify-start space-x-2 mb-4">
+                  <h1 className="mb-2 text-3xl font-bold">{selectedCandidate.nombreBoleta}</h1>
+                  <div className="flex items-center justify-center mb-4 space-x-2 md:justify-start">
                     <MapPin size={20} />
                     <span className="text-lg opacity-90">{selectedCandidate.posicion}</span>
                   </div>
-                  <div className="bg-white/20 rounded-lg px-4 py-2 inline-block">
+                  <div className="inline-block px-4 py-2 rounded-lg bg-white/20">
                     <span className="font-semibold">Casilla #{selectedCandidate.numeroCasilla}</span>
                   </div>
                 </div>
@@ -206,43 +206,43 @@ const CandidatesApp = () => {
             <div className="p-8 space-y-8">
               {/* Perfil */}
               <section>
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                <div className="flex items-center mb-4 space-x-3">
+                  <div className="flex items-center justify-center w-8 h-8 bg-green-100 rounded-lg">
                     <User className="text-green-600" size={20} />
                   </div>
                   <h2 className="text-2xl font-bold text-gray-800">Perfil</h2>
                 </div>
-                <p className="text-gray-600 leading-relaxed">{selectedCandidate.brevePerfil}</p>
+                <p className="leading-relaxed text-gray-600">{selectedCandidate.brevePerfil}</p>
               </section>
 
               {/* Experiencia */}
               <section>
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                <div className="flex items-center mb-4 space-x-3">
+                  <div className="flex items-center justify-center w-8 h-8 bg-blue-100 rounded-lg">
                     <Award className="text-blue-600" size={20} />
                   </div>
                   <h2 className="text-2xl font-bold text-gray-800">Funciones Partidarias Anteriores</h2>
                 </div>
-                <p className="text-gray-600 leading-relaxed">{selectedCandidate.funcionesAnteriores}</p>
+                <p className="leading-relaxed text-gray-600">{selectedCandidate.funcionesAnteriores}</p>
               </section>
 
               {/* Propuesta */}
               <section>
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                <div className="flex items-center mb-4 space-x-3">
+                  <div className="flex items-center justify-center w-8 h-8 bg-purple-100 rounded-lg">
                     <FileText className="text-purple-600" size={20} />
                   </div>
                   <h2 className="text-2xl font-bold text-gray-800">¿Por qué considera que debe ser electo?</h2>
                 </div>
-                <p className="text-gray-600 leading-relaxed">{selectedCandidate.porqueEleccion}</p>
+                <p className="leading-relaxed text-gray-600">{selectedCandidate.porqueEleccion}</p>
               </section>
 
               {/* Contact Info */}
-              <section className="bg-gray-50 rounded-xl p-6">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">Información de Contacto</h2>
-                <div className="grid md:grid-cols-2 gap-6">
+              <section className="p-6 bg-gray-50 rounded-xl">
+                <h2 className="mb-6 text-2xl font-bold text-gray-800">Información de Contacto</h2>
+                <div className="grid gap-6 md:grid-cols-2">
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                    <div className="flex items-center justify-center w-10 h-10 bg-green-100 rounded-lg">
                       <Phone className="text-green-600" size={20} />
                     </div>
                     <div>
@@ -251,7 +251,7 @@ const CandidatesApp = () => {
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <div className="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-lg">
                       <Mail className="text-blue-600" size={20} />
                     </div>
                     <div>
@@ -260,12 +260,12 @@ const CandidatesApp = () => {
                     </div>
                   </div>
                 </div>
-                <div className="mt-6 pt-6 border-t border-gray-200">
+                <div className="pt-6 mt-6 border-t border-gray-200">
                   <a
                     href={selectedCandidate.archivo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition-colors"
+                    className="inline-flex items-center px-6 py-3 space-x-2 text-white transition-colors bg-green-500 rounded-lg hover:bg-green-600"
                   >
                     <FileText size={20} />
                     <span>Ver documento completo</span>
@@ -282,10 +282,10 @@ const CandidatesApp = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       {/* Header */}
-      <div className="bg-gray-800/50 backdrop-blur-sm border-b border-gray-700">
-        <div className="max-w-6xl mx-auto px-6 py-4">
+      <div className="border-b border-gray-700 bg-gray-800/50 backdrop-blur-sm">
+        <div className="max-w-6xl px-6 py-4 mx-auto">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+            <div className="flex items-center justify-center w-8 h-8 bg-green-500 rounded-lg">
               <div className="w-4 h-4 bg-white rounded-sm"></div>
             </div>
             <span className="text-xl font-bold text-white">Juventud Participa FP</span>
@@ -295,24 +295,24 @@ const CandidatesApp = () => {
 
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="max-w-6xl px-6 py-16 mx-auto">
           <div className="flex items-center justify-between">
             <div className="max-w-2xl">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center">
+              <div className="flex items-center mb-6 space-x-3">
+                <div className="flex items-center justify-center w-12 h-12 bg-green-500 rounded-2xl">
                   <Award className="text-white" size={24} />
                 </div>
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
               </div>
-              <h1 className="text-5xl font-bold text-white mb-6">Nuestros Candidatos</h1>
-              <p className="text-xl text-gray-300 leading-relaxed">
+              <h1 className="mb-6 text-5xl font-bold text-white">Nuestros Candidatos</h1>
+              <p className="text-xl leading-relaxed text-gray-300">
                 Conoce a los jóvenes líderes que aspiran a representarte y transformar nuestra organización.
               </p>
             </div>
             
             {/* Decorative elements inspired by the design */}
-            <div className="hidden lg:block relative">
-              <div className="flex flex-wrap gap-4 max-w-md">
+            <div className="relative hidden lg:block">
+              <div className="flex flex-wrap max-w-md gap-4">
                 {candidates.slice(0, 6).map((candidate, index) => (
                   <div
                     key={candidate.id}
@@ -329,7 +329,7 @@ const CandidatesApp = () => {
                       <img
                         src={candidate.foto}
                         alt=""
-                        className="w-full h-full object-cover"
+                        className="object-cover w-full h-full"
                       />
                     )}
                   </div>
@@ -341,9 +341,9 @@ const CandidatesApp = () => {
       </div>
 
       {/* Tabs Section */}
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl px-6 mx-auto">
         <div className="flex justify-center mb-12">
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-2 border border-gray-700">
+          <div className="p-2 border border-gray-700 bg-gray-800/50 backdrop-blur-sm rounded-2xl">
             <div className="flex space-x-2">
               <button
                 onClick={() => setActiveTab('nacional')}
@@ -354,7 +354,7 @@ const CandidatesApp = () => {
                 }`}
               >
                 Dirección Central Nacional
-                <span className="ml-2 px-2 py-1 bg-white/20 rounded-full text-sm">
+                <span className="px-2 py-1 ml-2 text-sm rounded-full bg-white/20">
                   {candidatosNacionales.length}
                 </span>
               </button>
@@ -367,7 +367,7 @@ const CandidatesApp = () => {
                 }`}
               >
                 Dirección Central Local
-                <span className="ml-2 px-2 py-1 bg-white/20 rounded-full text-sm">
+                <span className="px-2 py-1 ml-2 text-sm rounded-full bg-white/20">
                   {candidatosLocales.length}
                 </span>
               </button>
@@ -377,9 +377,9 @@ const CandidatesApp = () => {
       </div>
 
       {/* Candidates Grid */}
-      <div className="max-w-6xl mx-auto px-6 pb-16">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-white mb-4">
+      <div className="max-w-6xl px-6 pb-16 mx-auto">
+        <div className="mb-8 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-white">
             {activeTab === 'nacional' ? 'Candidatos Dirección Central Nacional' : 'Candidatos Dirección Central Local'}
           </h2>
           <p className="text-gray-300">
@@ -391,42 +391,42 @@ const CandidatesApp = () => {
         </div>
 
         {candidatosFiltrados.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {candidatosFiltrados.map((candidate) => (
               <div
                 key={candidate.id}
-                className="bg-white rounded-3xl shadow-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 group"
+                className="overflow-hidden transition-all duration-300 bg-white shadow-xl rounded-3xl hover:transform hover:scale-105 group"
               >
                 <div className="relative">
                   <img
                     src={candidate.foto}
                     alt={candidate.nombreBoleta}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover w-full h-64 transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute top-4 right-4 bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg shadow-lg">
+                  <div className="absolute flex items-center justify-center w-12 h-12 text-lg font-bold text-white bg-green-500 rounded-full shadow-lg top-4 right-4">
                     {candidate.numeroCasilla}
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/20 to-transparent group-hover:opacity-100"></div>
                 </div>
                 
                 <div className="p-6">
-                  <div className="flex items-center space-x-2 mb-3">
-                    <div className="w-6 h-6 bg-green-500 rounded-lg flex items-center justify-center">
+                  <div className="flex items-center mb-3 space-x-2">
+                    <div className="flex items-center justify-center w-6 h-6 bg-green-500 rounded-lg">
                       <div className="w-3 h-3 bg-white rounded-sm"></div>
                     </div>
-                    <span className="text-sm text-gray-500 font-medium">
+                    <span className="text-sm font-medium text-gray-500">
                       {activeTab === 'nacional' ? 'Nacional' : 'Local'}
                     </span>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">{candidate.nombreBoleta}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">
+                  <h3 className="mb-3 text-xl font-bold text-gray-800">{candidate.nombreBoleta}</h3>
+                  <p className="mb-6 text-sm leading-relaxed text-gray-600 line-clamp-3">
                     {candidate.brevePerfilIntro}
                   </p>
                   
                   <button
                     onClick={() => handleViewProfile(candidate)}
-                    className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg"
+                    className="w-full px-6 py-3 font-semibold text-white transition-all duration-200 transform shadow-lg bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-xl hover:scale-105"
                   >
                     Ver perfil completo
                   </button>
@@ -435,11 +435,11 @@ const CandidatesApp = () => {
             ))}
           </div>
         ) : (
-          <div className="text-center py-16">
-            <div className="w-24 h-24 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="py-16 text-center">
+            <div className="flex items-center justify-center w-24 h-24 mx-auto mb-6 bg-gray-700 rounded-full">
               <User className="text-gray-400" size={40} />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">No hay candidatos disponibles</h3>
+            <h3 className="mb-4 text-2xl font-bold text-white">No hay candidatos disponibles</h3>
             <p className="text-gray-300">
               No se encontraron candidatos para {activeTab === 'nacional' ? 'Dirección Central Nacional' : 'Dirección Central Local'}
             </p>
@@ -448,11 +448,11 @@ const CandidatesApp = () => {
       </div>
 
       {/* Footer */}
-      <div className="bg-gray-800/50 backdrop-blur-sm border-t border-gray-700 mt-16">
-        <div className="max-w-6xl mx-auto px-6 py-8">
+      <div className="mt-16 border-t border-gray-700 bg-gray-800/50 backdrop-blur-sm">
+        <div className="max-w-6xl px-6 py-8 mx-auto">
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+            <div className="flex items-center justify-center mb-4 space-x-2">
+              <div className="flex items-center justify-center w-8 h-8 bg-green-500 rounded-lg">
                 <div className="w-4 h-4 bg-white rounded-sm"></div>
               </div>
               <span className="text-xl font-bold text-white">Juventud Participa FP</span>
